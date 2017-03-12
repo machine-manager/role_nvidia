@@ -6,8 +6,16 @@ defmodule RoleNvidia do
 
 	def role(_tags \\ []) do
 		version = 378
+		desired_packages = [
+			"nvidia-#{version}",
+			"libcuda1-#{version}",
+			"nvidia-opencl-icd-#{version}",
+			"nvidia-settings",
+			# nvidia doesn't work with rootless X yet
+			"xserver-xorg-legacy",
+		]
 		%{
-			desired_packages: ["nvidia-#{version}", "libcuda1-#{version}", "nvidia-opencl-icd-#{version}", "nvidia-settings"],
+			desired_packages: desired_packages,
 			apt_keys:         [Util.content("files/apt_keys/1118213C Launchpad PPA for Graphics Drivers Team.txt")],
 			apt_sources:      ["deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu xenial main"],
 		}
