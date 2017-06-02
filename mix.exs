@@ -15,6 +15,7 @@ defmodule RoleNvidia.Mixfile do
 	defp deps do
 		[
 			{:converge, ">= 0.1.0"},
+			{:gears,    ">= 0.1.0"},
 		]
 	end
 end
