@@ -12,8 +12,6 @@ defmodule RoleNvidia do
 			"libcuda1-#{version}",
 			"nvidia-opencl-icd-#{version}",
 			"nvidia-settings",
-			# nvidia doesn't work with rootless X yet
-			"xserver-xorg-legacy",
 		]
 		%{
 			desired_packages: desired_packages,
