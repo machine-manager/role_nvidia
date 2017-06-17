@@ -10,6 +10,7 @@ defmodule RoleNvidia do
 		desired_packages = [
 			"nvidia-#{version}",
 			"libcuda1-#{version}",
+			"nvidia-libopencl1-#{version}",
 			"nvidia-opencl-icd-#{version}",
 			"nvidia-settings",
 		]
