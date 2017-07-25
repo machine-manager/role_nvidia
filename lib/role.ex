@@ -6,7 +6,7 @@ defmodule RoleNvidia do
 	Util.declare_external_resources("files")
 
 	def role(_tags \\ []) do
-		version = get_current_official_release()
+		version = max(384, get_current_official_release())
 		desired_packages = [
 			"nvidia-#{version}",
 			"libcuda1-#{version}",
