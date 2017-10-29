@@ -16,7 +16,7 @@ defmodule RoleNvidia do
 		]
 		%{
 			desired_packages: desired_packages,
-			apt_keys:         [Util.content("files/apt_keys/1118213C Launchpad PPA for Graphics Drivers Team.txt")],
+			apt_keys:         [Util.content("files/apt_keys/1118213C Launchpad PPA for Graphics Drivers Team.gpg")],
 			apt_sources:      ["deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu xenial main"],
 		}
 	end
