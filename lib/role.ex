@@ -23,7 +23,8 @@ defmodule RoleNvidia do
 			:stretch ->
 				%{
 					desired_packages: [
-						"nvidia-driver",
+						"nvidia-driver-bin",
+						"nvidia-kernel-dkms",
 						"libcuda1",
 						"nvidia-libopencl1",
 						"nvidia-opencl-icd",
