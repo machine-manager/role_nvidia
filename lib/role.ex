@@ -25,18 +25,23 @@ defmodule RoleNvidia do
 					desired_packages: [
 						"xserver-xorg-legacy",
 						"xserver-xorg-video-nvidia",
-						"libopengl0-glvnd-nvidia",
-						"libgl1-glvnd-nvidia-glx",
-						"libegl1-glvnd-nvidia",
+
 						"nvidia-driver-bin",
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
-						"libcuda1",
-						# "nvidia-libopencl1", # conflicts with: libwine:i386 ocl-icd-libopencl1:i386 wine32:i386
 						"nvidia-opencl-icd",
+						"nvidia-vulkan-icd",
 						"nvidia-vdpau-driver",
 						"nvidia-settings",
 						"nvidia-smi",
+
+						# GLVND flavor, as per debian/nvidia-driver.README.Debian.in
+						"libgl1-nvidia-glvnd-glx",
+						"libgl1-glvnd-nvidia-glx",
+						"nvidia-egl-icd",
+						"libglx0-glvnd-nvidia",
+						"libegl1-glvnd-nvidia",
+						"nvidia-vulkan-common",
 					]
 				}
 		end
