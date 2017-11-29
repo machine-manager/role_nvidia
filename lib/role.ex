@@ -25,7 +25,9 @@ defmodule RoleNvidia do
 					desired_packages: [
 						"xserver-xorg-legacy",
 						"xserver-xorg-video-nvidia",
+						"libopengl0-glvnd-nvidia",
 						"libgl1-glvnd-nvidia-glx",
+						"libegl1-glvnd-nvidia",
 						"nvidia-driver-bin",
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
