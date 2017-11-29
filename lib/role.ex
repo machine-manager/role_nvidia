@@ -24,12 +24,15 @@ defmodule RoleNvidia do
 				%{
 					desired_packages: [
 						"xserver-xorg-legacy",
+						"xserver-xorg-video-nvidia",
+						"libgl1-glvnd-nvidia-glx",
 						"nvidia-driver-bin",
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
 						"libcuda1",
 						# "nvidia-libopencl1", # conflicts with: libwine:i386 ocl-icd-libopencl1:i386 wine32:i386
 						"nvidia-opencl-icd",
+						"nvidia-vdpau-driver",
 						"nvidia-settings",
 						"nvidia-smi",
 					]
