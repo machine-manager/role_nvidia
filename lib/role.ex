@@ -41,6 +41,12 @@ defmodule RoleNvidia do
 						"libglx0-glvnd-nvidia",
 						"libegl1-glvnd-nvidia",
 						"nvidia-vulkan-common",
+
+						# We don't want to lock with physlock because NVIDIA can't DPMS sleep
+						# at a text VT and 387.34 can no longer properly reattach the display
+						# after it is power-cycled, so use xscreensaver to lock the screen
+						# instead.  Note that xscreensaver does not protect against VT-switching.
+						"xscreensaver",
 					]
 				}
 		end
