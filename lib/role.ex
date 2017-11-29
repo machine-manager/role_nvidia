@@ -43,9 +43,10 @@ defmodule RoleNvidia do
 						"nvidia-vulkan-common",
 
 						# We don't want to lock with physlock because NVIDIA can't DPMS sleep
-						# at a text VT and 387.34 can no longer properly reattach the display
-						# after it is power-cycled, so use xscreensaver to lock the screen
-						# instead.  Note that xscreensaver does not protect against VT-switching.
+						# at a text-mode VT, and 387.34 can no longer properly reattach our 4K
+						# DisplayPort monitor after it is power-cycled, so install xscreensaver
+						# for screen locking.  Note that xscreensaver does not protect against
+						# VT-switching.
 						"xscreensaver",
 					]
 				}
