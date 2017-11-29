@@ -23,6 +23,7 @@ defmodule RoleNvidia do
 			:stretch ->
 				%{
 					desired_packages: [
+						"xserver-xorg-legacy",
 						"nvidia-driver-bin",
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
