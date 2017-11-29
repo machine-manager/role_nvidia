@@ -30,7 +30,6 @@ defmodule RoleNvidia do
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
 						"nvidia-opencl-icd",
-						"nvidia-vulkan-icd",
 						"nvidia-vdpau-driver",
 						"nvidia-settings",
 						"nvidia-smi",
