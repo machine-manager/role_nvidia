@@ -27,7 +27,7 @@ defmodule RoleNvidia do
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
 						"libcuda1",
-						"nvidia-libopencl1",
+						# "nvidia-libopencl1", # conflicts with: libwine:i386 ocl-icd-libopencl1:i386 wine32:i386
 						"nvidia-opencl-icd",
 						"nvidia-settings",
 						"nvidia-smi",
