@@ -41,13 +41,6 @@ defmodule RoleNvidia do
 						"libglx0-glvnd-nvidia",
 						"libegl1-glvnd-nvidia",
 						"nvidia-vulkan-common",
-
-						# We don't want to lock with physlock because NVIDIA can't DPMS sleep
-						# at a text-mode VT, and 387.34 can no longer properly reattach our 4K
-						# DisplayPort monitor after it is power-cycled, so install xscreensaver
-						# for screen locking.  Note that xscreensaver does not protect against
-						# VT-switching.
-						"xscreensaver",
 					]
 				}
 		end
