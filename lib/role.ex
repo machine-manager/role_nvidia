@@ -1,11 +1,18 @@
-alias Converge.Util
+alias Converge.{Util, All}
 
 defmodule RoleNvidia do
 	require Util
+	import Util, only: [conf_file: 1, conf_dir: 1]
 	Util.declare_external_resources("files")
 
 	def role(tags \\ []) do
 		release = Util.tag_value!(tags, "release") |> String.to_atom()
+		post_install_unit =
+			%All{units: [
+				conf_dir("/etc/X11"),
+				conf_dir("/etc/X11/xorg.conf.d"),
+				conf_file("/etc/X11/xorg.conf.d/90-nvidia_i2c.conf"),
+			]}
 		case release do
 			:xenial ->
 				version = 384
@@ -17,8 +24,9 @@ defmodule RoleNvidia do
 						"nvidia-opencl-icd-#{version}",
 						"nvidia-settings",
 					],
-					apt_keys:    [Util.content("files/apt_keys/1118213C Launchpad PPA for Graphics Drivers Team.gpg")],
-					apt_sources: ["deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu xenial main"],
+					apt_keys:          [Util.content("files/apt_keys/1118213C Launchpad PPA for Graphics Drivers Team.gpg")],
+					apt_sources:       ["deb http://ppa.launchpad.net/graphics-drivers/ppa/ubuntu xenial main"],
+					post_install_unit: post_install_unit,
 				}
 			:stretch ->
 				%{
@@ -41,7 +49,8 @@ defmodule RoleNvidia do
 						"libglx0-glvnd-nvidia",
 						"libegl1-glvnd-nvidia",
 						"nvidia-vulkan-common",
-					]
+					],
+					post_install_unit: post_install_unit,
 				}
 		end
 	end
