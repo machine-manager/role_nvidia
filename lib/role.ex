@@ -38,6 +38,8 @@ defmodule RoleNvidia do
 						"nvidia-driver-bin",
 						"nvidia-kernel-dkms",
 						"linux-headers-amd64",
+						# For building DKMS modules with objtool / ORC unwinder
+						"libelf-dev",
 						"nvidia-opencl-icd",
 						"nvidia-vdpau-driver",
 						"nvidia-settings",
