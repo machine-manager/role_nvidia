@@ -19,6 +19,7 @@ defmodule RoleNvidia do
 				%{
 					desired_packages: [
 						"nvidia-#{version}",
+						"linux-headers-generic",
 						"libcuda1-#{version}",
 						"nvidia-libopencl1-#{version}",
 						"nvidia-opencl-icd-#{version}",
