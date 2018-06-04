@@ -55,6 +55,11 @@ defmodule RoleNvidia do
 
 						# For --hwdec=cuda in mpv
 						"libnvcuvid1",
+
+						# For Steam, which needs all of these on NVIDIA
+						"libdrm2:i386",
+						"libgl1-glvnd-nvidia-glx:i386",
+						"libglx-nvidia0:i386",
 					],
 					post_install_unit: post_install_unit,
 				}
