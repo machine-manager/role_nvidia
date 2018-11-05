@@ -5,8 +5,13 @@ defmodule RoleNvidia do
 	import Util, only: [conf_file: 1, conf_dir: 1]
 	Util.declare_external_resources("files")
 
-	def role(_tags \\ []) do
+	def role(tags \\ []) do
+		release = Util.tag_value!(tags, "release")
 		%{
+			apt_pins: [
+				%{package: "nvidia-driver-bin", pin: "release n=#{release}-backports", pin_priority: 990},
+				%{package: "nvidia-kernel-dkms", pin: "release n=#{release}-backports", pin_priority: 990},
+			],
 			desired_packages: [
 				"xserver-xorg-legacy",
 				"xserver-xorg-video-nvidia",
